@@ -1,7 +1,8 @@
 import intro
 import os
 import validators
-#python3 -m pip install validators
+import requests
+from bs4 import BeautifulSoup
 
 class Arachnida:
 	def __init__(self):
@@ -39,3 +40,7 @@ def parsing(argv, spidey: Arachnida):
 	if not spidey.Url:
 		ft_exit()
 
+def ft_fetch(spidey: Arachnida):
+	res = requests.get(spidey.Url)
+	pars = BeautifulSoup(res.content, 'html.parser')
+	print(pars.find("img"))

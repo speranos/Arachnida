@@ -8,6 +8,7 @@ def main(argv):
         utils.ft_exit()
     spidey = utils.Arachnida()
     utils.parsing(argv, spidey)
+    utils.ft_fetch(spidey)
 
 if __name__ == "__main__":
     main(sys.argv)
